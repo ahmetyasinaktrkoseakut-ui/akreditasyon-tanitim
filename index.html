@@ -262,6 +262,257 @@
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
       }
+
+      /* --- Desktop & Mobile Accordion Styles --- */
+      @media (min-width: 769px) {
+        .cap-card-summary, .role-summary {
+          cursor: default;
+          list-style: none;
+        }
+        .cap-card-summary::-webkit-details-marker,
+        .role-summary::-webkit-details-marker {
+          display: none;
+        }
+        .cap-chevron, .role-chevron {
+          display: none !important;
+        }
+        .cap-summary-left {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+        .cap-card-summary {
+          margin-bottom: 12px;
+        }
+        .cap-summary-left .cap-icon {
+          margin-bottom: 14px;
+        }
+        .cap-summary-titles {
+          display: flex;
+          flex-direction: column;
+        }
+        .cap-summary-titles .cap-tag {
+          margin-bottom: 8px;
+          width: fit-content;
+        }
+        .cap-summary-titles h3 {
+          margin: 0;
+          font-family: var(--heading);
+          font-size: 19px;
+          font-weight: 600;
+          letter-spacing: -.02em;
+          color: #263442;
+          line-height: 1.3;
+        }
+        .role-summary-left {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+        .role-summary-titles h3 {
+          margin: 0 0 6px;
+          font-family: var(--heading);
+          font-size: 23px;
+          font-weight: 600;
+          color: #ffffff;
+        }
+        .role-summary-titles .role-box-subtitle {
+          color: #B9D0E3;
+          font-size: 13px;
+          font-weight: 650;
+          display: block;
+          margin-bottom: 0;
+        }
+        .cap-detail-box {
+          margin-top: 8px;
+          font-size: 12.5px;
+          color: #56616A;
+          line-height: 1.55;
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* Mobile Capabilities Accordion ("Açılır Menü") */
+        .cap-grid {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 10px !important;
+        }
+        .cap-card {
+          min-height: auto !important;
+          padding: 0 !important;
+          border-radius: 12px !important;
+          border: 1.5px solid #D6E0E9 !important;
+          background: #ffffff !important;
+          overflow: hidden !important;
+          box-shadow: 0 2px 8px rgba(38, 52, 66, .04) !important;
+        }
+        .cap-card-summary {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          gap: 12px !important;
+          padding: 13px 16px !important;
+          cursor: pointer !important;
+          min-height: 54px !important;
+          list-style: none !important;
+          -webkit-tap-highlight-color: transparent !important;
+        }
+        .cap-card-summary::-webkit-details-marker {
+          display: none !important;
+        }
+        .cap-summary-left {
+          display: flex !important;
+          align-items: center !important;
+          gap: 12px !important;
+          min-width: 0 !important;
+        }
+        .cap-icon {
+          width: 34px !important;
+          height: 34px !important;
+          flex-shrink: 0 !important;
+        }
+        .cap-summary-titles {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 2px !important;
+          min-width: 0 !important;
+        }
+        .cap-summary-titles .cap-tag {
+          font-size: 10px !important;
+          padding: 2px 6px !important;
+          width: fit-content !important;
+        }
+        .cap-summary-titles h3 {
+          margin: 0 !important;
+          font-size: 14.5px !important;
+          font-weight: 700 !important;
+          color: #263442 !important;
+          line-height: 1.25 !important;
+        }
+        .cap-chevron {
+          color: #3D6E9A !important;
+          flex-shrink: 0 !important;
+          transition: transform 0.25s ease !important;
+        }
+        details[open].cap-card > .cap-card-summary .cap-chevron {
+          transform: rotate(180deg) !important;
+        }
+        .cap-body {
+          padding: 14px 16px 16px !important;
+          border-top: 1px solid #EDF2F7 !important;
+          background: #FAFCFE !important;
+        }
+        .cap-body p {
+          font-size: 13.5px !important;
+          line-height: 1.6 !important;
+          color: #56616A !important;
+          margin: 0 0 10px !important;
+        }
+        .cap-detail-box {
+          margin: 8px 0 12px !important;
+          padding: 10px 12px !important;
+          border-radius: 8px !important;
+          background: #EDF2F7 !important;
+          font-size: 12.5px !important;
+          line-height: 1.55 !important;
+          color: #334155 !important;
+        }
+
+        /* Mobile Roles Accordion ("Başlıklı / Boşluklu Açılır Kartlar") */
+        .roles-grid {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 12px !important;
+          margin-top: 24px !important;
+        }
+        .role-box {
+          padding: 0 !important;
+          border-radius: 12px !important;
+          border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
+          background: rgba(255, 255, 255, 0.08) !important;
+          backdrop-filter: blur(10px) !important;
+          overflow: hidden !important;
+        }
+        .role-summary {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          gap: 12px !important;
+          padding: 14px 18px !important;
+          cursor: pointer !important;
+          min-height: 56px !important;
+          list-style: none !important;
+          -webkit-tap-highlight-color: transparent !important;
+        }
+        .role-summary::-webkit-details-marker {
+          display: none !important;
+        }
+        .role-summary-left {
+          display: flex !important;
+          align-items: center !important;
+          gap: 12px !important;
+          min-width: 0 !important;
+        }
+        .role-badge {
+          margin-bottom: 0 !important;
+          padding: 4px 9px !important;
+          font-size: 11px !important;
+          flex-shrink: 0 !important;
+        }
+        .role-summary-titles {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 2px !important;
+          min-width: 0 !important;
+        }
+        .role-summary-titles h3 {
+          margin: 0 !important;
+          font-size: 16px !important;
+          font-weight: 700 !important;
+          color: #ffffff !important;
+          line-height: 1.2 !important;
+        }
+        .role-summary-titles .role-box-subtitle {
+          margin-bottom: 0 !important;
+          font-size: 12px !important;
+          color: #B9D0E3 !important;
+          line-height: 1.2 !important;
+        }
+        .role-chevron {
+          color: #C9D9E8 !important;
+          flex-shrink: 0 !important;
+          transition: transform 0.25s ease !important;
+        }
+        details[open].role-box > .role-summary .role-chevron {
+          transform: rotate(180deg) !important;
+        }
+        .role-body {
+          padding: 16px 18px 20px !important;
+          border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+          background: rgba(0, 0, 0, 0.12) !important;
+        }
+        .role-info-block {
+          margin-bottom: 14px !important;
+        }
+        .role-info-label {
+          color: #A5C8E4 !important;
+          font-size: 11px !important;
+          font-weight: 800 !important;
+          letter-spacing: .06em !important;
+          margin-bottom: 4px !important;
+        }
+        .role-info-text {
+          font-size: 14px !important;
+          line-height: 1.6 !important;
+          color: #F1F5F9 !important;
+        }
+        .role-box-pills {
+          margin-top: 14px !important;
+          padding-top: 14px !important;
+          border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -368,160 +619,208 @@
             <h2>Fakültenizin kalite çalışmaları tek merkezde.</h2>
             <p>Ölçüt ve kanıt yönetiminden ders izlencelerine, anketlerden çift dilli raporlara kadar temel kalite araçları bir arada.</p>
           </div>
-          <div class="cap-grid">
+                    <div class="cap-grid">
             <!-- MODÜL 1 -->
-            <article class="cap-card">
-              <div class="cap-card-top">
-                <div class="cap-card-header">
+            <details class="cap-card cap-accordion"  open>
+              <summary class="cap-card-summary">
+                <div class="cap-summary-left">
                   <span class="cap-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h10M4 18h7M18 14l3 3-3 3" /></svg>
                   </span>
-                  <span class="cap-tag">Akreditasyon Çekirdeği</span>
+                  <div class="cap-summary-titles">
+                    <span class="cap-tag">Akreditasyon Çekirdeği</span>
+                    <h3>Ölçüt & PUKÖ Yönetim Merkezi</h3>
+                  </div>
                 </div>
-                <h3>Ölçüt & PUKÖ Yönetim Merkezi</h3>
-                <p>Ölçütleri, PUKÖ adımlarını, kanıtları ve olgunluk puanlarını aynı yerde yönetin.</p><details class="more"><summary>Özellik ayrıntıları</summary><p>İAA A–E temel alanları ve 58 alt ölçüt havuzu, 7 adımlı PUKÖ kartları, kanıt belgesi ilişkilendirme ve 1–5 İAA olgunluk puanlaması.</p></details>
+                <svg class="cap-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="cap-body">
+                <p>Ölçütleri, PUKÖ adımlarını, kanıtları ve olgunluk puanlarını aynı yerde yönetin.</p>
+                <div class="cap-detail-box">İAA A–E temel alanları ve 58 alt ölçüt havuzu, 7 adımlı PUKÖ kartları, kanıt belgesi ilişkilendirme ve 1–5 İAA olgunluk puanlaması.</div>
+                <div class="cap-pills">
+                  <span class="cap-pill">58 Alt Ölçüt</span>
+                  <span class="cap-pill">7 Aşamalı PUKÖ</span>
+                  <span class="cap-pill">Kanıt Yönetimi</span>
+                  <span class="cap-pill">1–5 Puanlama</span>
+                </div>
               </div>
-              <div class="cap-pills">
-                <span class="cap-pill">58 Alt Ölçüt</span>
-                <span class="cap-pill">7 Aşamalı PUKÖ</span>
-                <span class="cap-pill">Kanıt Yönetimi</span>
-                <span class="cap-pill">1–5 Puanlama</span>
-              </div>
-            </article>
+            </details>
 
             <!-- MODÜL 2 -->
-            <article class="cap-card">
-              <div class="cap-card-top">
-                <div class="cap-card-header">
+            <details class="cap-card cap-accordion"  open>
+              <summary class="cap-card-summary">
+                <div class="cap-summary-left">
                   <span class="cap-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
                   </span>
-                  <span class="cap-tag">Eğitim & Öğretim</span>
+                  <div class="cap-summary-titles">
+                    <span class="cap-tag">Eğitim & Öğretim</span>
+                    <h3>Ders İzlenceleri & İAA DÖÇ Matrisi</h3>
+                  </div>
                 </div>
-                <h3>Ders İzlenceleri & İAA DÖÇ Matrisi</h3>
-                <p>Ders izlencelerini, AKTS iş yükünü ve program çıktısı eşleşmelerini düzenleyin.</p><details class="more"><summary>Özellik ayrıntıları</summary><p>Fakülte müfredatı için haftalık ders planı, AKTS iş yükü hesabı, Program Çıktıları (PÇ) ve İAA Disipline Özgü Çıktılar (DÖÇ) matrisi ile şifresiz Kamusal İzlence Portalı.</p></details>
+                <svg class="cap-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="cap-body">
+                <p>Ders izlencelerini, AKTS iş yükünü ve program çıktısı eşleşmelerini düzenleyin.</p>
+                <div class="cap-detail-box">Fakülte müfredatı için haftalık ders planı, AKTS iş yükü hesabı, Program Çıktıları (PÇ) ve İAA Disipline Özgü Çıktılar (DÖÇ) matrisi ile şifresiz Kamusal İzlence Portalı.</div>
+                <div class="cap-pills">
+                  <span class="cap-pill">Haftalık İzlence</span>
+                  <span class="cap-pill">AKTS İş Yükü</span>
+                  <span class="cap-pill">İAA DÖÇ Matrisi</span>
+                  <span class="cap-pill">Kamusal Portal</span>
+                </div>
               </div>
-              <div class="cap-pills">
-                <span class="cap-pill">Haftalık İzlence</span>
-                <span class="cap-pill">AKTS İş Yükü</span>
-                <span class="cap-pill">İAA DÖÇ Matrisi</span>
-                <span class="cap-pill">Kamusal Portal</span>
-              </div>
-            </article>
+            </details>
 
             <!-- MODÜL 3 -->
-            <article class="cap-card">
-              <div class="cap-card-top">
-                <div class="cap-card-header">
+            <details class="cap-card cap-accordion"  open>
+              <summary class="cap-card-summary">
+                <div class="cap-summary-left">
                   <span class="cap-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 16l4-4 4 4 5-6"/></svg>
                   </span>
-                  <span class="cap-tag">İzleme & Analitik</span>
+                  <div class="cap-summary-titles">
+                    <span class="cap-tag">İzleme & Analitik</span>
+                    <h3>Süreç İzleme & Canlı Stres Testi</h3>
+                  </div>
                 </div>
-                <h3>Süreç İzleme & Canlı Stres Testi</h3>
-                <p>İlerlemeyi izleyin; rapor ve kanıt eksiklerini erkenden fark edin.</p><details class="more"><summary>Özellik ayrıntıları</summary><p>Fakülte geneli canlı ilerleme kokpiti; 3 boyutlu stres testi ile ÖDR'si alınmamış ölçütleri, raporda olmayan kanıtları ve İngilizce tercüme eksiklerini otomatik tarama.</p></details>
+                <svg class="cap-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="cap-body">
+                <p>İlerlemeyi izleyin; rapor ve kanıt eksiklerini erkenden fark edin.</p>
+                <div class="cap-detail-box">Fakülte geneli canlı ilerleme kokpiti; 3 boyutlu stres testi ile ÖDR'si alınmamış ölçütleri, raporda olmayan kanıtları ve İngilizce tercüme eksiklerini otomatik tarama.</div>
+                <div class="cap-pills">
+                  <span class="cap-pill">İlerleme Kokpiti</span>
+                  <span class="cap-pill">3 Boyutlu Stres Testi</span>
+                  <span class="cap-pill">Risk & Darboğaz</span>
+                </div>
               </div>
-              <div class="cap-pills">
-                <span class="cap-pill">İlerleme Kokpiti</span>
-                <span class="cap-pill">3 Boyutlu Stres Testi</span>
-                <span class="cap-pill">Risk & Darboğaz</span>
-              </div>
-            </article>
+            </details>
 
             <!-- MODÜL 4 -->
-            <article class="cap-card">
-              <div class="cap-card-top">
-                <div class="cap-card-header">
+            <details class="cap-card cap-accordion"  open>
+              <summary class="cap-card-summary">
+                <div class="cap-summary-left">
                   <span class="cap-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
                   </span>
-                  <span class="cap-tag">Toplumsal Katkı</span>
+                  <div class="cap-summary-titles">
+                    <span class="cap-tag">Toplumsal Katkı</span>
+                    <h3>Dış Faaliyet Havuzu & Açık Portal</h3>
+                  </div>
                 </div>
-                <h3>Dış Faaliyet Havuzu & Açık Portal</h3>
-                <p>Dış faaliyetleri ve paydaşlardan gelen kanıtları ortak havuzda toplayın.</p><details class="more"><summary>Özellik ayrıntıları</summary><p>Sempozyum, konferans, panel ve sosyal sorumluluk projelerinin toplanması; kurum dışı paydaşların ve misafirlerin şifreye gerek duymadan kanıt aktarabildiği açık bildirim portalı.</p></details>
+                <svg class="cap-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="cap-body">
+                <p>Dış faaliyetleri ve paydaşlardan gelen kanıtları ortak havuzda toplayın.</p>
+                <div class="cap-detail-box">Sempozyum, konferans, panel ve sosyal sorumluluk projelerinin toplanması; kurum dışı paydaşların ve misafirlerin şifreye gerek duymadan kanıt aktarabildiği açık bildirim portalı.</div>
+                <div class="cap-pills">
+                  <span class="cap-pill">Faaliyet Havuzu</span>
+                  <span class="cap-pill">Şifresiz Bildirim</span>
+                  <span class="cap-pill">Kanıt Entegrasyonu</span>
+                </div>
               </div>
-              <div class="cap-pills">
-                <span class="cap-pill">Faaliyet Havuzu</span>
-                <span class="cap-pill">Şifresiz Bildirim</span>
-                <span class="cap-pill">Kanıt Entegrasyonu</span>
-              </div>
-            </article>
+            </details>
 
             <!-- MODÜL 5 -->
-            <article class="cap-card">
-              <div class="cap-card-top">
-                <div class="cap-card-header">
+            <details class="cap-card cap-accordion"  open>
+              <summary class="cap-card-summary">
+                <div class="cap-summary-left">
                   <span class="cap-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                   </span>
-                  <span class="cap-tag">Kalite Güvencesi</span>
+                  <div class="cap-summary-titles">
+                    <span class="cap-tag">Kalite Güvencesi</span>
+                    <h3>Gelişmiş Anket ve Paydaş Yönetimi</h3>
+                  </div>
                 </div>
-                <h3>Gelişmiş Anket ve Paydaş Yönetimi</h3>
-                <p>Paydaş görüşlerini analiz edin ve iyileştirme çalışmalarına bağlayın.</p><details class="more"><summary>Özellik ayrıntıları</summary><p>Öğrenci, mezun, akademik personel ve dış paydaş anketleri; grafiksel analiz, memnuniyet skorları üretimi ve doğrudan ölçüt iyileştirme önlemlerine veri aktarımı.</p></details>
+                <svg class="cap-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="cap-body">
+                <p>Paydaş görüşlerini analiz edin ve iyileştirme çalışmalarına bağlayın.</p>
+                <div class="cap-detail-box">Öğrenci, mezun, akademik personel ve dış paydaş anketleri; grafiksel analiz, memnuniyet skorları üretimi ve doğrudan ölçüt iyileştirme önlemlerine veri aktarımı.</div>
+                <div class="cap-pills">
+                  <span class="cap-pill">Paydaş Anketleri</span>
+                  <span class="cap-pill">Grafiksel Analiz</span>
+                  <span class="cap-pill">İyileştirme Önlemleri</span>
+                </div>
               </div>
-              <div class="cap-pills">
-                <span class="cap-pill">Paydaş Anketleri</span>
-                <span class="cap-pill">Grafiksel Analiz</span>
-                <span class="cap-pill">İyileştirme Önlemleri</span>
-              </div>
-            </article>
+            </details>
 
             <!-- MODÜL 6 -->
-            <article class="cap-card">
-              <div class="cap-card-top">
-                <div class="cap-card-header">
+            <details class="cap-card cap-accordion"  open>
+              <summary class="cap-card-summary">
+                <div class="cap-summary-left">
                   <span class="cap-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                   </span>
-                  <span class="cap-tag">Raporlama</span>
+                  <div class="cap-summary-titles">
+                    <span class="cap-tag">Raporlama</span>
+                    <h3>İki Dilli (TR / EN) ÖDR ve Kurum Raporları</h3>
+                  </div>
                 </div>
-                <h3>İki Dilli (TR / EN) ÖDR ve Kurum Raporları</h3>
-                <p>Türkçe ve İngilizce özdeğerlendirme raporlarını Word veya PDF olarak alın.</p><details class="more"><summary>Özellik ayrıntıları</summary><p>Tek tıkla İAA standartlarında Türkçe ve İngilizce Kurumsal Özdeğerlendirme Raporu (ÖDR); Word ve PDF formatında resmi, kanıt atıflı nihai rapor ihracı.</p></details>
+                <svg class="cap-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="cap-body">
+                <p>Türkçe ve İngilizce özdeğerlendirme raporlarını Word veya PDF olarak alın.</p>
+                <div class="cap-detail-box">Tek tıkla İAA standartlarında Türkçe ve İngilizce Kurumsal Özdeğerlendirme Raporu (ÖDR); Word ve PDF formatında resmi, kanıt atıflı nihai rapor ihracı.</div>
+                <div class="cap-pills">
+                  <span class="cap-pill">TR & EN Çift Dilli ÖDR</span>
+                  <span class="cap-pill">Word & PDF İhracı</span>
+                  <span class="cap-pill">Kanıt Atıf Dizini</span>
+                </div>
               </div>
-              <div class="cap-pills">
-                <span class="cap-pill">TR & EN Çift Dilli ÖDR</span>
-                <span class="cap-pill">Word & PDF İhracı</span>
-                <span class="cap-pill">Kanıt Atıf Dizini</span>
-              </div>
-            </article>
+            </details>
 
             <!-- MODÜL 7 -->
-            <article class="cap-card">
-              <div class="cap-card-top">
-                <div class="cap-card-header">
+            <details class="cap-card cap-accordion"  open>
+              <summary class="cap-card-summary">
+                <div class="cap-summary-left">
                   <span class="cap-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
                   </span>
-                  <span class="cap-tag">Kurumsal Hafıza</span>
+                  <div class="cap-summary-titles">
+                    <span class="cap-tag">Kurumsal Hafıza</span>
+                    <h3>Kalite El Kitabı ve Belge Yönetimi</h3>
+                  </div>
                 </div>
-                <h3>Kalite El Kitabı ve Belge Yönetimi</h3>
-                <p>Kalite belgelerini, politikaları ve mevzuatı ortak bir kütüphanede saklayın.</p><details class="more"><summary>Özellik ayrıntıları</summary><p>Fakültenin kalite politikaları, el kitabı kütüphanesi, mevzuat arşivi, komisyon kararları ve tüm birimlerin erişebileceği ortak kurumsal doküman deposu.</p></details>
+                <svg class="cap-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="cap-body">
+                <p>Kalite belgelerini, politikaları ve mevzuatı ortak bir kütüphanede saklayın.</p>
+                <div class="cap-detail-box">Fakültenin kalite politikaları, el kitabı kütüphanesi, mevzuat arşivi, komisyon kararları ve tüm birimlerin erişebileceği ortak kurumsal doküman deposu.</div>
+                <div class="cap-pills">
+                  <span class="cap-pill">Kalite El Kitabı</span>
+                  <span class="cap-pill">Politika Belgeleri</span>
+                  <span class="cap-pill">Kurumsal Belge Havuzu</span>
+                </div>
               </div>
-              <div class="cap-pills">
-                <span class="cap-pill">Kalite El Kitabı</span>
-                <span class="cap-pill">Politika Belgeleri</span>
-                <span class="cap-pill">Kurumsal Belge Havuzu</span>
-              </div>
-            </article>
+            </details>
 
             <!-- MODÜL 8 -->
-            <article class="cap-card">
-              <div class="cap-card-top">
-                <div class="cap-card-header">
+            <details class="cap-card cap-accordion"  open>
+              <summary class="cap-card-summary">
+                <div class="cap-summary-left">
                   <span class="cap-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                   </span>
-                  <span class="cap-tag">Güvenlik & Denetim</span>
+                  <div class="cap-summary-titles">
+                    <span class="cap-tag">Güvenlik & Denetim</span>
+                    <h3>Dönem Mühürleme, Atama ve Loglar</h3>
+                  </div>
                 </div>
-                <h3>Dönem Mühürleme, Atama ve Loglar</h3>
-                <p>Dönemleri ve yetkileri yönetin; işlemlerin geçmişini izleyin.</p><details class="more"><summary>Özellik ayrıntıları</summary><p>Akademik dönem açma/arşivleme, birim atamaları, İAA denetimi öncesi dönemi mühürleyerek veriyi kilitleme ve silinemez işlem geçmişi (Audit Trail logları).</p></details>
+                <svg class="cap-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="cap-body">
+                <p>Dönemleri ve yetkileri yönetin; işlemlerin geçmişini izleyin.</p>
+                <div class="cap-detail-box">Akademik dönem açma/arşivleme, birim atamaları, İAA denetimi öncesi dönemi mühürleyerek veriyi kilitleme ve silinemez işlem geçmişi (Audit Trail logları).</div>
+                <div class="cap-pills">
+                  <span class="cap-pill">Dönem Mühürleme</span>
+                  <span class="cap-pill">Audit Trail (İşlem Günlüğü)</span>
+                  <span class="cap-pill">RLS Veri Güvenliği</span>
+                </div>
               </div>
-              <div class="cap-pills">
-                <span class="cap-pill">Dönem Mühürleme</span>
-                <span class="cap-pill">Audit Trail (İşlem Günlüğü)</span>
-                <span class="cap-pill">RLS Veri Güvenliği</span>
-              </div>
-            </article>
+            </details>
           </div>
         </div>
       </section>
@@ -539,113 +838,133 @@
               <span aria-hidden="true">↗</span>
             </a>
           </div>
-          <div class="roles-grid">
-            <!-- KUTU 1: BİRİM KULLANICISI -->
-            <article class="role-box">
-              <div class="role-box-top">
-                <span class="role-badge">Rol 01</span>
-                <h3>Birim Kullanıcısı</h3>
-                <span class="role-box-subtitle">Ölçüt Sorumlusu Öğretim Üyesi</span>
-
+                    <div class="roles-grid">
+            <!-- ROL 1: BİRİM KULLANICISI -->
+            <details class="role-box role-accordion"  open>
+              <summary class="role-summary">
+                <div class="role-summary-left">
+                  <span class="role-badge">Rol 01</span>
+                  <div class="role-summary-titles">
+                    <h3>Birim Kullanıcısı</h3>
+                    <span class="role-box-subtitle">Ölçüt Sorumlusu Öğretim Üyesi</span>
+                  </div>
+                </div>
+                <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="role-body">
                 <div class="role-info-block">
                   <span class="role-info-label">Ne Görür?</span>
                   <p class="role-info-text">Yalnızca kendisine zimmetlenen A–E alt ölçütlerini ve her ölçütteki 7 adımlı PUKÖ kartlarını.</p>
                 </div>
-
                 <div class="role-info-block">
                   <span class="role-info-label">Ne Yapar?</span>
-                  <p class="role-info-text">Atanmış ölçütleri PUKÖ adımlarıyla tamamlar, kanıtları ekler ve koordinatör incelemesine gönderir.</p><details class="more role-more"><summary>Görev ayrıntıları</summary><p class="role-info-text">Tanım yazar, takvimli plan ve risk analizini girer, faaliyet açıklayıp kanıt yükler (belgede sarı fosforlu kalemle ilgili yeri işaretler), anket sonuçlarını işler, iyileştirme önlemlerini ve 1–5 olgunluk puanını belirler; <em>ÖDR Editöründe</em> kanıt atıflarını bağlayarak <strong>Koordinatör Onayına Gönderir</strong>.</p></details>
+                  <p class="role-info-text">Atanmış ölçütleri PUKÖ adımlarıyla tamamlar, kanıtları ekler ve koordinatör incelemesine gönderir.</p>
+                  <details class="more role-more"><summary>Görev ayrıntıları</summary><p class="role-info-text">Tanım yazar, takvimli plan ve risk analizini girer, faaliyet açıklayıp kanıt yükler, anket sonuçlarını işler, iyileştirme önlemlerini ve 1–5 olgunluk puanını belirler; <em>ÖDR Editöründe</em> kanıt atıflarını bağlayarak <strong>Koordinatör Onayına Gönderir</strong>.</p></details>
+                </div>
+                <div class="role-box-pills">
+                  <span class="role-pill">1. Kalite El Kitabı</span>
+                  <span class="role-pill">2. Planlama & Risk</span>
+                  <span class="role-pill">3. Uygulama & Kanıt</span>
+                  <span class="role-pill">4. Kontrol (Anket)</span>
+                  <span class="role-pill">5. İyileştirme & Önlem</span>
+                  <span class="role-pill">6. 1–5 Puanlama</span>
+                  <span class="role-pill">7. ÖDR & Onaya Gönder</span>
                 </div>
               </div>
+            </details>
 
-              <div class="role-box-pills">
-                <span class="role-pill">1. Kalite El Kitabı</span>
-                <span class="role-pill">2. Planlama & Risk</span>
-                <span class="role-pill">3. Uygulama & Kanıt</span>
-                <span class="role-pill">4. Kontrol (Anket)</span>
-                <span class="role-pill">5. İyileştirme & Önlem</span>
-                <span class="role-pill">6. 1–5 Puanlama</span>
-                <span class="role-pill">7. ÖDR & Onaya Gönder</span>
-              </div>
-            </article>
-
-            <!-- KUTU 2: KOORDİNATÖR -->
-            <article class="role-box">
-              <div class="role-box-top">
-                <span class="role-badge">Rol 02</span>
-                <h3>Koordinatör</h3>
-                <span class="role-box-subtitle">Başlık & Ölçüt Koordinatörü</span>
-
+            <!-- ROL 2: KOORDİNATÖR -->
+            <details class="role-box role-accordion"  open>
+              <summary class="role-summary">
+                <div class="role-summary-left">
+                  <span class="role-badge">Rol 02</span>
+                  <div class="role-summary-titles">
+                    <h3>Koordinatör</h3>
+                    <span class="role-box-subtitle">Başlık & Ölçüt Koordinatörü</span>
+                  </div>
+                </div>
+                <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="role-body">
                 <div class="role-info-block">
                   <span class="role-info-label">Ne Görür?</span>
                   <p class="role-info-text">Yetkili olduğu A–E başlıkları altındaki ölçüt havuzunu, zimmetli birimleri ve onay bekleyen PUKÖ kayıtlarını.</p>
                 </div>
-
                 <div class="role-info-block">
                   <span class="role-info-label">Ne Yapar?</span>
-                  <p class="role-info-text">Birim çalışmalarını inceler; uygun kayıtları onaylar, gerektiğinde gerekçeli revizyon ister.</p><details class="more role-more"><summary>Görev ayrıntıları</summary><p class="role-info-text">Birim sorumlusunun girdiği 7 aşamayı ve kanıtları inceler. Standartlara uygunsa onaylar; eksik veya yetersiz bulursa <strong>"Revizyon İste"</strong> butonuyla gerekçesini yazar. Sistem sorumlu hocaya anında resmi e-posta bildirimi göndererek raporu yeniden düzenlemeye açar.</p></details>
+                  <p class="role-info-text">Birim çalışmalarını inceler; uygun kayıtları onaylar, gerektiğinde gerekçeli revizyon ister.</p>
+                  <details class="more role-more"><summary>Görev ayrıntıları</summary><p class="role-info-text">Birim sorumlusunun girdiği 7 aşamayı ve kanıtları inceler. Standartlara uygunsa onaylar; eksik veya yetersiz bulursa <strong>"Revizyon İste"</strong> butonuyla gerekçesini yazar. Sistem sorumlu hocaya anında resmi e-posta bildirimi göndererek raporu yeniden düzenlemeye açar.</p></details>
+                </div>
+                <div class="role-box-pills">
+                  <span class="role-pill">Ölçüt Zimmetleme</span>
+                  <span class="role-pill">Hiyerarşik İnceleme</span>
+                  <span class="role-pill">Gerekçeli Revizyon İste</span>
+                  <span class="role-pill">Onay & Sevk</span>
                 </div>
               </div>
+            </details>
 
-              <div class="role-box-pills">
-                <span class="role-pill">Ölçüt Zimmetleme</span>
-                <span class="role-pill">Hiyerarşik İnceleme</span>
-                <span class="role-pill">Gerekçeli Revizyon İste</span>
-                <span class="role-pill">Onay & Sevk</span>
-              </div>
-            </article>
-
-            <!-- KUTU 3: YÖNETİCİ -->
-            <article class="role-box">
-              <div class="role-box-top">
-                <span class="role-badge">Rol 03</span>
-                <h3>Yönetici</h3>
-                <span class="role-box-subtitle">Dekanlık & Kalite Koordinatörlüğü</span>
-
+            <!-- ROL 3: YÖNETİCİ -->
+            <details class="role-box role-accordion"  open>
+              <summary class="role-summary">
+                <div class="role-summary-left">
+                  <span class="role-badge">Rol 03</span>
+                  <div class="role-summary-titles">
+                    <h3>Yönetici</h3>
+                    <span class="role-box-subtitle">Dekanlık & Kalite Koordinatörlüğü</span>
+                  </div>
+                </div>
+                <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="role-body">
                 <div class="role-info-block">
                   <span class="role-info-label">Ne Görür?</span>
                   <p class="role-info-text">Fakülte geneli A–E alan ilerleme kokpitini, PUKÖ onay merkezini ve süreç darboğazlarını.</p>
                 </div>
-
                 <div class="role-info-block">
                   <span class="role-info-label">Ne Yapar?</span>
-                  <p class="role-info-text">Dönemi ve görevleri yönetir, ilerlemeyi izler ve rapor çıktısını alır.</p><details class="more role-more"><summary>Görev ayrıntıları</summary><p class="role-info-text">Dönemi açar, ölçütleri hocalara zimmetler. <strong>Canlı Dönem Stres Testi</strong> ile PUKÖ'sü bitip ÖDR'si alınmamış veya raporda olmayan kanıtları tespit eder. Süreç bitiminde <strong>Dönem Mühürleme</strong> ile veriyi kilitler ve tek tıkla resmi <strong>Özdeğerlendirme Raporu (Word/PDF)</strong> çıktısı alır.</p></details>
+                  <p class="role-info-text">Dönemi ve görevleri yönetir, ilerlemeyi izler ve rapor çıktısını alır.</p>
+                  <details class="more role-more"><summary>Görev ayrıntıları</summary><p class="role-info-text">Dönemi açar, ölçütleri hocalara zimmetler. <strong>Canlı Dönem Stres Testi</strong> ile PUKÖ'sü bitip ÖDR'si alınmamış veya raporda olmayan kanıtları tespit eder. Süreç bitiminde <strong>Dönem Mühürleme</strong> ile veriyi kilitler ve tek tıkla resmi <strong>Özdeğerlendirme Raporu (Word/PDF)</strong> çıktısı alır.</p></details>
+                </div>
+                <div class="role-box-pills">
+                  <span class="role-pill">Dönem Açma & Zimmetleme</span>
+                  <span class="role-pill">Canlı Stres Testi</span>
+                  <span class="role-pill">Dönem Mühürleme (RLS)</span>
+                  <span class="role-pill">Tek Tıkla ÖDR İhracı</span>
                 </div>
               </div>
+            </details>
 
-              <div class="role-box-pills">
-                <span class="role-pill">Dönem Açma & Zimmetleme</span>
-                <span class="role-pill">Canlı Stres Testi</span>
-                <span class="role-pill">Dönem Mühürleme (RLS)</span>
-                <span class="role-pill">Tek Tıkla ÖDR İhracı</span>
-              </div>
-            </article>
-
-            <!-- KUTU 4: GÖZLEMCİ -->
-            <article class="role-box">
-              <div class="role-box-top">
-                <span class="role-badge">Rol 04</span>
-                <h3>Gözlemci</h3>
-                <span class="role-box-subtitle">Dış Değerlendirici / İAA Değerlendirme Takımı</span>
-
+            <!-- ROL 4: GÖZLEMCİ -->
+            <details class="role-box role-accordion"  open>
+              <summary class="role-summary">
+                <div class="role-summary-left">
+                  <span class="role-badge">Rol 04</span>
+                  <div class="role-summary-titles">
+                    <h3>Gözlemci</h3>
+                    <span class="role-box-subtitle">Dış Değerlendirici / İAA Değerlendirme Takımı</span>
+                  </div>
+                </div>
+                <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="role-body">
                 <div class="role-info-block">
                   <span class="role-info-label">Ne Görür?</span>
                   <p class="role-info-text">Tüm A–E başlıklarını, alt ölçütleri, yüklenen kanıtları, 7 adımlı PUKÖ kartlarını ve resmi ÖDR raporlarını.</p>
                 </div>
-
                 <div class="role-info-block">
                   <span class="role-info-label">Ne Yapar?</span>
-                  <p class="role-info-text">Ölçütleri, kanıtları ve raporları salt okunur biçimde inceler.</p><details class="more role-more"><summary>Görev ayrıntıları</summary><p class="role-info-text">İlahiyat Akreditasyon Ajansı'ndan (İAA) gelen dış değerlendirme takımı veya dekanlık üst yönetimi için tanımlanır. Sistemi <strong>salt okunur (izleme)</strong> modunda tam şeffaflıkla inceler; orijinal veriyi bozmadan veya silmeden bağımsız denetim yürütür.</p></details>
+                  <p class="role-info-text">Ölçütleri, kanıtları ve raporları salt okunur biçimde inceler.</p>
+                  <details class="more role-more"><summary>Görev ayrıntıları</summary><p class="role-info-text">İlahiyat Akreditasyon Ajansı'ndan (İAA) gelen dış değerlendirme takımı veya dekanlık üst yönetimi için tanımlanır. Sistemi <strong>salt okunur (izleme)</strong> modunda tam şeffaflıkla inceler; orijinal veriyi bozmadan veya silmeden bağımsız denetim yürütür.</p></details>
+                </div>
+                <div class="role-box-pills">
+                  <span class="role-pill">İAA Dış Değerlendirmesi</span>
+                  <span class="role-pill">Salt Okunur (İzleme)</span>
+                  <span class="role-pill">Tüm Kanıt & ÖDR İnceleme</span>
+                  <span class="role-pill">Veri Güvenliği Koruması</span>
                 </div>
               </div>
-
-              <div class="role-box-pills">
-                <span class="role-pill">İAA Dış Değerlendirmesi</span>
-                <span class="role-pill">Salt Okunur (İzleme)</span>
-                <span class="role-pill">Tüm Kanıt & ÖDR İnceleme</span>
-                <span class="role-pill">Veri Güvenliği Koruması</span>
-              </div>
-            </article>
+            </details>
           </div>
           <div class="workflow-bottom"><span><strong>Sonuç:</strong> İlgili kayıtlar ve kanıt atıflarıyla desteklenen resmi özdeğerlendirme raporu ve denetim hazır hafızası.</span><span>Birim Girişi → Koordinatör Onayı → Dekanlık & ÖDR İhracı → İAA Dış Değerlendirmesi</span></div>
         </div>
@@ -690,6 +1009,28 @@
         <span aria-hidden="true">📞</span> Ara
       </a>
     </div>
+
+    <script>
+      (function() {
+        function syncAccs() {
+          var isMobile = window.innerWidth <= 768;
+          var els = document.querySelectorAll('.cap-accordion, .role-accordion');
+          for (var i = 0; i < els.length; i++) {
+            if (isMobile) {
+              els[i].removeAttribute('open');
+            } else {
+              els[i].setAttribute('open', '');
+            }
+          }
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', syncAccs);
+        } else {
+          syncAccs();
+        }
+        window.addEventListener('resize', syncAccs);
+      })();
+    </script>
   </body>
 </html>
 
